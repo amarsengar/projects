@@ -1,0 +1,27 @@
+
+{% extends 'common.html' %}
+{% load static %}
+
+{% block head %}
+<title>Profile</title>
+{% endblock %}
+
+
+  {% block content %}
+
+<div class="container">
+    <p>
+        <p><b>First name:</b>{{ user.first_name}}</p>
+        <p><b>Last_name:</b>{{ user.last_name }}</p>
+        <p><b>Email Id:</b>{{ user.email }}</p>
+       </p>
+       <p>
+          <p><b> City:</b>{{ user.userprofile.city }}</p>
+           <p><b>about:</b>{{ user.userprofile.about}}</p>
+           <p><b>Phone:</b>{{ user.userprofile.contact}}</p>
+           <img src="{{ user.userprofile.head_snap.url}}" width="220">
+
+    </p>
+</div>
+
+{% endblock %}
