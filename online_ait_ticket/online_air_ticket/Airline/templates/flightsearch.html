@@ -1,0 +1,56 @@
+{%extends 'index.html'%}
+{% block body %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flightsearch</title>
+</head>
+<body>
+
+
+<form class="post-form" method="post" style="background-color:#ffe6ff; padding-left: 100px; ">
+    <br>
+    <div class="input-append">
+    {%csrf_token %}
+  <b>  {{form.as_p}} </b>
+<input class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color:black" value="Search">
+</div>
+<br>
+</form>
+
+{%endblock%}
+{% block content %} {%endblock%}
+
+
+<script>
+
+    function validate() {
+        if (document.getElementById('id_one_way').checked){
+            document.getElementById('id_return_date_day').disabled=true
+            document.getElementById('id_return_date_month').disabled=true
+            document.getElementById('id_return_date_year').disabled=true
+        } else {
+            document.getElementById('id_return_date_day').disabled=false
+            document.getElementById('id_return_date_month').disabled=false
+            document.getElementById('id_return_date_year').disabled=false
+
+        }
+
+        }
+    function updateDestinitions(){
+        document.getElementById('id_destination').length=0
+        var destinitions = {{destinations|safe}};
+        console.log(document.getElementById('id_origin').value)
+        for (var i=0; i<destinitions[document.getElementById('id_origin').value].length; i++){
+            document.getElementById('id_destination')[document.getElementById('id_destination'.length)]=
+             new Option(destinations[document.getElementById('id_origin').value][i],
+            destinations[document.getElementById('id_origin').value][i]);
+        }
+    }
+
+</script>
+</body>
+</html>
