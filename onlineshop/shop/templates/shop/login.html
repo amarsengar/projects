@@ -1,0 +1,23 @@
+{% extends 'shop/base1.html' %}
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Please Login</h1>
+      {% if user not in login %}{% url 'shop:user_login' %}{%endif%}
+
+        <form action="{% url 'shop:user_login' %}" method="post">
+          {% csrf_token %}
+          {# A more "HTML" way of creating the login form#}
+          <label for="username">Username</label>
+          <input type="text"  id="username" name="username" placeholder="Username">
+
+          <label for="password">password</label>
+          <input type="password" id="password" name="password">&nbsp;
+          <input class="btn btn-primary btn-sm"  &nbsp; type="submit" name="submit" value="Login">
+
+        </form>
+
+
+    </div>
+  </div>
+{% endblock %}

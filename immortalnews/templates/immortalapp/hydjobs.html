@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Immortal jobs</title>
+</head>
+<body>
+ <link rel="stylesheet" href="{%static  'css/News.css' %}">
+    <h1> Hyderabad jobs information</h1>
+
+
+    <img height="230px" width="330px" src="{% static 'images/hyd1.jpg' %}" alt="" border="5">
+    <img height="230px" width="330px" src="{% static 'images/hyd2.jpg' %}" alt="" border="5">
+    <img height="230px" width="330px" src="{% static 'images/hyd3.jpg' %}" alt="" border="5">
+    <hr>
+    {% if jobs_list %}
+      <table id="tab">
+        <thead>
+          <tr>
+           <th>date</th>
+            <th>company</th>
+            <th>title</th>
+            <th>address</th>
+            <th>email</th>
+            <th>contact</th>
+         </tr>
+        </thead>
+        {% for job in jobs_list %}
+        <tr>
+            <td>{{job.date}}</td>
+            <td>{{job.company}}</td>
+            <td>{{job.title}}</td>
+            <td>{{job.address}}</td>
+            <td>{{job.email}}</td>
+            <td>{{job.contact}}</td>
+          </tr>
+        {% endfor %}
+      </table>
+       {%else%}
+       <p> No jobs found in hyderabad</p>
+    {%endif%}
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{%load static %}
+{%load staticfiles%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/News.css'%}">
+</head>
+<body>
+    <div class="container" align="center">
+        <div class="jumbotron">
+            <h1>Welcome to immortal Jobs!!!</h1>
+            <p>Continuous job updated for every hour....</p>
+            <a class="btn btn-primary btn-lg" href="/hydjobs"
+               role="button">Hyderabad jobs</a>&nbsp&nbsp&nbsp
+            <a class="btn btn-primary btn-lg" href="/blrjobs"
+               role="button">Bangalore jobs</a>&nbsp&nbsp&nbsp
+            <a class="btn btn-primary btn-lg" href="/chennaijobs"
+               role="button">Chennai jobs</a>&nbsp&nbsp&nbsp
+            <a class="btn btn-primary btn-lg" href="/punejobs"
+               role="button">Pune jobs</a>
+        </div>
+    </div>
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+<div class="container">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="/w3images/map.jpg" style="width:100%">
+    </div>
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
